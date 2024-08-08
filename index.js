@@ -29,7 +29,7 @@ const findCustomer = (name) => {
 
 // >>Update Customer
 const updateCustomer = (_id, customer) => {
-  Customer.update({ _id }, customer).then((customer) => {
+  Customer.findOneAndUpdate({ _id }, customer).then((customer) => {
     console.info("Customer Updated");
   });
 };
