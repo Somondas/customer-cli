@@ -27,5 +27,32 @@ const findCustomer = (name) => {
   //   db.close();
 };
 
+// >>Update Customer
+const updateCustomer = (_id, customer) => {
+  Customer.update({ _id }, customer).then((customer) => {
+    console.info("Customer Updated");
+  });
+};
+
+// >> Remove Customer
+const removeCustomer = (_id) => {
+  Customer.deleteOne({ _id }).then((customer) => {
+    console.info("Customer Removed");
+  });
+};
+
+// >> List Customers
+const listCustomers = () => {
+  Customer.find().then((customers) => {
+    console.info(customers);
+    console.info(`${customers.length} matches`);
+  });
+};
 // ? Export All Methods
-export { addCustomer, findCustomer };
+export {
+  addCustomer,
+  findCustomer,
+  updateCustomer,
+  removeCustomer,
+  listCustomers,
+};
