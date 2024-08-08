@@ -10,7 +10,7 @@ const db = mongoose.connect("mongodb://localhost:27017/customercli");
 const addCustomer = (customer) => {
   Customer.create(customer).then((customer) => {
     console.info("New Customer Added");
-    db.close();
+    // db.close();
   });
 };
 
@@ -22,9 +22,9 @@ const findCustomer = (name) => {
     (customer) => {
       console.info(customer);
       console.info(`${customer.length} matches`);
-      db.close();
     }
   );
+  //   db.close();
 };
 
 // ? Export All Methods
